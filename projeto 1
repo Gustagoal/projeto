@@ -1,0 +1,14 @@
+from PySimpleGUI import PySimpleGUI as sg
+sg.theme('Reddit')
+layout = [[sg.Text('usuario'),sg.Input(key = 'usuario')],
+[sg.Text('senha'),sg.Input(key='senha',password_char='*')],[sg.Checkbox('salvar login')],[sg.Button('entrar')]]
+
+janela = sg.Window('tela de login',layout)
+
+while True:
+    eventos,valores = janela.read()
+    if eventos == sg.WIN_CLOSED:
+        break
+    if eventos == 'entrar':
+        if valores['usuario']=='gustavo'and valores['senha'] == '123':
+            print('bem vindo ao meu site')
